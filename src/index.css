@@ -1,0 +1,65 @@
+@import 'tailwindcss';
+@config '../tailwind.config.js';
+
+
+@font-face {
+  font-family: 'ubuntu';
+  src: url(./assets/fonts/Ubuntu-Regular.ttf);
+}
+@font-face {
+  font-family: 'ubuntu-md';
+  src: url(./assets/fonts/Ubuntu-Medium.ttf);
+}
+@font-face {
+  font-family: 'ubuntu-bold';
+  src: url(./assets/fonts/Ubuntu-Bold.ttf);
+}
+
+
+.colors-preview{
+  --color-marine-blue: hsl(213, 96%, 18%); /* current step number, h1 */
+  --color-cool-gray: hsl(231, 11%, 63%); /* p tags under h1, or text on top of each step name */
+  --color-main-bg: hsl(217, 100%, 97%); /* main bg color */
+  --color-pale-blue: hsl(208, 91%, 86%); /* border color for the circle of steps on the side bar and fill color for the current step*/
+  --color-light-gray: hsl(229, 24%, 87%); /* form input border color */
+  --color-purplish-blue: hsl(243, 100%, 62%); /* add-ons border color, add-ons price color*/
+  --color-light-blue: hsl(216, 71%, 97%); /* step toggle container bg color */
+  --color-alabaster: hsl(231, 100%, 99%); /* selected addOn bg color */
+  --color-pastel-blue: hsl(228, 100%, 84%); 
+  --color-strawberry-red: hsl(354, 84%, 57%);
+}
+
+
+@theme {
+  --color-marine-blue: hsl(213, 96%, 18%); /* selected step number, h1 */
+  --color-cool-gray: hsl(231, 11%, 63%); /* p tags under h1, or text on top of each step name */
+  --color-main-bg: hsl(217, 100%, 97%); /* main bg color */
+  --color-pale-blue: hsl(208, 91%, 86%); /* border color for the circle of steps on the side bar and fill color for the current step*/
+  --color-light-gray: hsl(229, 24%, 87%); /* form input border color */
+  --color-purplish-blue: hsl(243, 100%, 62%); /* add-ons border color, add-ons price color*/
+  --color-light-blue: hsl(216, 71%, 97%); /* step toggle container bg color */
+  --color-alabaster: hsl(231, 100%, 99%); /* selected addOn bg color */
+  --color-pastel-blue: hsl(228, 100%, 84%); 
+  --color-strawberry-red: hsl(354, 84%, 57%);
+
+  --breakpoint-desktop: 940px;
+  --container-desktop: 940px;
+}
+
+
+
+@layer base{
+  h1{
+    @apply text-2xl font-[ubuntu-bold] text-marine-blue mb-2 @desktop:mb-1.25 @desktop:text-[2rem] 
+  }
+}
+
+@layer components{
+  .plan{
+    @apply border border-light-gray min-h-19.5 rounded-md px-3.75 pt-2.5 pb-3.25 flex @max-md:items-center @md:flex-col gap-y-10.25 gap-x-3.75 hover:border-cool-gray cursor-pointer select-none @desktop:min-h-40 @desktop:px-3.5 @desktop:pt-4.5
+  }
+}
+
+@utility semibold{
+  @apply font-[500]
+}
