@@ -37,7 +37,7 @@ function FormSharedLayout({currentStep}){
   const steps = ["YOUR INFO","SELECT PLAN","ADD-ONS","SUMMARY"]
   return (
     <div className='relative bg-white w-[940px] h-max @desktop:mt-27 rounded-2xl @desktop:px-4 @desktop:pt-3.5 @desktop:pb-4.5 font-[Ubuntu] grid @desktop:grid-cols-[auto_1fr] mb-12.25'>
-      <div className="min-w-[275px] min-h-43 px-8 py-8 bg-[url(./src/assets/images/bg-sidebar-mobile.svg)] @desktop:rounded-[10px] bg-no-repeat bg-cover flex @max-desktop:justify-center items-start gap-x-4 gap-y-[24.5px] @desktop:min-h-[569px] @desktop:h-full @desktop:py-9.25 @desktop:bg-[url(./src/assets/images/bg-sidebar-desktop.svg)] @desktop:flex-col ">
+      <div className="min-w-[275px] min-h-43 px-8 py-8 bg-[url(/images/bg-sidebar-mobile.svg)] @desktop:rounded-[10px] bg-no-repeat bg-cover flex @max-desktop:justify-center items-start gap-x-4 gap-y-[24.5px] @desktop:min-h-[569px] @desktop:h-full @desktop:py-9.25 @desktop:bg-[url(/images/bg-sidebar-desktop.svg)] @desktop:flex-col ">
         {steps.map((step, i) => <Step key={step} stepNumber={i+1} title={step} isSelected={(currentStep == 4? 3: currentStep) == i}></Step>)}
       </div>
       <div className="absolute bg-white @max-lg:w-[91.5%] @max-desktop:w-[95.6%] @max-desktop:mt-24.5 @max-desktop:mx-4 @max-desktop:px-6 pt-7 rounded-xl @max-desktop:shadow @desktop:static @desktop:pl-24.75 @desktop:pr-21 @desktop:pt-9 @desktop:w-full">
@@ -267,7 +267,7 @@ function StepFour({setCurrentStep, currentStep, formData}){
 function StepFive(){
   return(
     <div className='text-center h-full pt-12.5 @desktop:pt-32.5 pb-20'>
-      <img src="./src/assets/images/icon-thank-you.svg" alt="check mark icon" className='w-14 mx-auto mb-5 @lg:mb-6.5' />
+      <img src="/images/icon-thank-you.svg" alt="check mark icon" className='w-14 mx-auto mb-5 @lg:mb-6.5' />
       <h1 className='mb-2.5'>Thank you!</h1>
       <p className='text-cool-gray text-base/6.25'>
         Thanks for confirming your subscription! We hope you have fun 
@@ -338,7 +338,7 @@ function Plan({paysYearly, setSelectedPlan, selectedPlan, planProps}){
   }
   return (
     <div className={`plan ${name == selectedPlan.name && "bg-main-bg border-cool-gray"}`} onClick={handleClick}>
-      <img src={`./src/assets/images/icon-${name}.svg`} alt="" className='w-[40px]' />
+      <img src={`/images/icon-${name}.svg`.toLowerCase()} alt="" className='w-[40px]' />
       <p className='leading-5.75'>
         <span className='block text-marine-blue font-bold text-[15px] @lg:mb-1'>{name}</span>
         <span className='text-sm block text-cool-gray'>
